@@ -15,7 +15,7 @@ Misma estructura que `workdocs/PLAN.md`: cada story tiene una persona, un worktr
 **Diseño técnico (qué toca, contratos, orden):**
 
 1. Crear `src/csv.js` con `export function toCsv(invoices)`. Recibe el arreglo de `listInvoices()` y devuelve un string. No lee archivos ni toca `process`.
-2. Formato: cabecera `id;cliente;fecha;monto;estado`, separador `;`, fin de línea `\r\n`, BOM UTF-8 (`﻿`) al inicio para que Excel de Windows lea bien los acentos. Monto como número, sin símbolo ni puntos de miles.
+2. Formato: cabecera `id;cliente;fecha;monto;estado`, separador `;`, fin de línea `\r\n`, BOM UTF-8 (los bytes EF BB BF, U+FEFF) al inicio para que Excel de Windows lea bien los acentos. Monto como número, sin símbolo ni puntos de miles.
 3. Escape RFC 4180: un campo que contiene `;`, `"` o salto de línea va entre comillas, y las comillas internas se duplican.
 
 **Test de aceptación (falla antes de codear):** `test/csv.test.js`. Verifica que el string parte con BOM + cabecera, que usa `;` y `\r\n`, que el monto sale como número y que un cliente con `;` o `"` queda escapado. Falla porque `src/csv.js` no existe.
