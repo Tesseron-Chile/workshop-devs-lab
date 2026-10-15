@@ -6,7 +6,10 @@
         "hooks": [
           {
             "type": "command",
-            "command": "node \"${CLAUDE_PROJECT_DIR}/.claude/hooks/tests-antes-del-commit.mjs\"",
+            "command": "node",
+            "args": [
+              "${CLAUDE_PROJECT_DIR}/.claude/hooks/tests-antes-del-commit.mjs"
+            ],
             "timeout": 300
           }
         ]
