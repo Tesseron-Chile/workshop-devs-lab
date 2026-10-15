@@ -1,0 +1,19 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node",
+            "args": [
+              "${CLAUDE_PROJECT_DIR}/.claude/hooks/tests-antes-del-commit.mjs"
+            ],
+            "timeout": 300
+          }
+        ]
+      }
+    ]
+  }
+}
