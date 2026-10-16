@@ -6,8 +6,10 @@ Es un producto de mentira: un listado de facturas de **Andes Lab**. El pedido de
 
 ## Pre-flight
 
+Una persona del equipo usa **Use this template > Create a new repository**, lo crea en su cuenta como **Private** e invita al resto con permiso de escritura. No hagan fork: un fork de este repo queda público.
+
 ```bash
-git clone git@github.com:Tesseron-Chile/<repo-del-equipo>.git
+git clone git@github.com:<cuenta>/<repo-del-equipo>.git
 cd <repo-del-equipo>
 npm test
 ```
